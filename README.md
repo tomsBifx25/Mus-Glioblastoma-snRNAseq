@@ -144,4 +144,4 @@ jupyter
 
 ---
 
-*BIFX-546 · Hood College · Spring 2026 · Dr. Sarangan Ravichandran*
+*BIFX-546 · Hood College · Spring 2026 · Thomas Walsh · Dr. Sarangan Ravichandran (Instructor)*
