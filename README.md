@@ -49,21 +49,21 @@ The original data was sourced from a CELLxGENE Discover collection titled "Gliob
 ```
 Mus-Glioblastoma-snRNAseq/
 ├── Notebooks/
-│   ├── Check01_EDA.ipynb              # Data loading, cleaning, EDA
+│   ├── Check01_EDA.ipynb                  # Data loading, cleaning, initial EDA
 ├── Data/
-│   └── Cohort-Old.csv
-│   └── Cohort-Young.csv
-│   └── UMAP.h5ad
+│   └── Cohort-Old.csv                     # Young cohort sn RNA seq data
+│   └── Cohort-Young.csv                   # Old cohort sn RNA seq data
+│   └── UMAP.h5ad                          # UMAP data
 ├── Results/
-│   ├── fig01_gen_Reads-Genes.png
-│   ├── fig02_gen_Reads-Genes-byType.png
-│   ├── fig03_gen_Reads-Genes-bySex.png
-│   ├── fig04_gen_Distrib-Reads.png
-│   ├── fig05_gen_Distrib-Genes.png
+│   ├── fig01_gen_Reads-Genes.png          # Reads vs. Genes (scatter plot)
+│   ├── fig02_gen_Reads-Genes-byType.png   # Reads vs. Genes by Cell Type (scatter plot)
+│   ├── fig03_gen_Reads-Genes-bySex.png    # Reads vs. Genes by Sex (scatter plot)
+│   ├── fig04_gen_Distrib-Reads.png        # Distribution of Reads by Cell type (violin plot)
+│   ├── fig05_gen_Distrib-Genes.png        # Distribution of Genes by Cell type (violin plot)
 ├── src/
-│   └── preprocess.py             # Reusable cleaning functions
-├── README.md
-└── requirements.txt
+│   └── preprocess.py                      # Possible preprocess cleaning needed
+├── README.md                              # Project Overview
+└── requirements.txt                       # List of possible dependencies
 ```
 
 ---
