@@ -112,17 +112,6 @@ Open notebooks in order: `Check01_EDA.ipynb`
 | Fig 4 | `results/fig04_gen_Distrib-Reads.png` | Distribution of the number of Reads by Cell type (violin plot) |
 | Fig 5 | `results/fig05_gen_Distrib-Genes.png` | Distribution of the number of Genes by Cell type (violin plot) |
 
-**Model performance summary:**
-
-| Model | Accuracy | Precision | Recall | AUC-ROC |
-|---|---|---|---|---|
-| Logistic Regression | 0.74 | 0.61 | 0.58 | 0.79 |
-| Decision Tree | 0.70 | 0.57 | 0.62 | 0.74 |
-
----
-
-## Summary of Findings
-
 ---
 
 ## Dependencies
