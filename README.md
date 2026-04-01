@@ -49,11 +49,11 @@ The original data was sourced from a CELLxGENE Discover collection titled "Gliob
 ```
 Mus-Glioblastoma-snRNAseq/
 ├── Notebooks/
-│   ├── 01_eda.ipynb              # Data loading, cleaning, EDA
+│   ├── Check01_EDA.ipynb              # Data loading, cleaning, EDA
 ├── Data/
-│   └── README_data.md            # Link to UCI source; raw file not included (>50MB)
-│   └── README_data.md            # Link to UCI source; raw file not included (>50MB)
-│   └── README_data.md            # Link to UCI source; raw file not included (>50MB)
+│   └── Cohort-Old.csv
+│   └── Cohort-Young.csv
+│   └── UMAP.h5ad
 ├── Results/
 │   ├── fig01_gen_Reads-Genes.png
 │   ├── fig02_gen_Reads-Genes-byType.png
@@ -88,8 +88,8 @@ Mus-Glioblastoma-snRNAseq/
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourteam/diabetes-readmission.git
-cd diabetes-readmission
+git clone https://github.com/tomsBifx25/Mus-Glioblastoma-snRNAseq.git
+cd Mus-Glioblastoma-snRNAseq
 
 # Install dependencies
 pip install -r requirements.txt
@@ -98,17 +98,19 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-Open notebooks in order: `01_eda.ipynb` → `02_hypothesis_testing.ipynb` → `03_modeling.ipynb`
+Open notebooks in order: `Check01_EDA.ipynb`
 
 ---
 
-## 📈 Key Results & Plots
+## Key Results & Plots
 
 | Figure | File | Description |
 |---|---|---|
-| Fig 1 | `results/fig1_readmission_by_age.png` | Readmission rate by age group (bar chart) |
-| Fig 2 | `results/fig2_correlation_heatmap.png` | Correlation matrix of numeric clinical features |
-| Fig 3 | `results/fig3_roc_curve.png` | ROC curve comparing logistic regression vs. decision tree |
+| Fig 1 | `results/fig01_gen_Reads-Genes.png` | Number of Reads by Number of Genes (scatter plot) |
+| Fig 2 | `results/fig02_gen_Reads-Genes-byType.png` | Reads vs. Genes by Cell type (scatter plot) |
+| Fig 3 | `results/fig03_gen_Reads-Genes-bySex.png` | Reads vs. Genes by Sex (scatter plot) |
+| Fig 4 | `results/fig04_gen_Distrib-Reads.png` | Distribution of the number of Reads by Cell type (violin plot) |
+| Fig 5 | `results/fig05_gen_Distrib-Genes.png` | Distribution of the number of Genes by Cell type (violin plot) |
 
 **Model performance summary:**
 
@@ -119,25 +121,11 @@ Open notebooks in order: `01_eda.ipynb` → `02_hypothesis_testing.ipynb` → `0
 
 ---
 
-## 📝 Summary of Findings
-
-Our EDA revealed that readmission rates differ substantially across age groups, with
-patients aged 70–80 showing the highest 30-day readmission rate (~14%). A chi-square
-test confirmed a statistically significant association between primary diagnosis category
-and readmission status (p < 0.001), and bootstrap confidence intervals placed the
-overall readmission rate at 11.2% ± 0.4%.
-
-The logistic regression model achieved an AUC-ROC of 0.79, outperforming the
-decision tree (0.74). The three strongest predictors of readmission were number of
-inpatient visits in the prior year, number of diagnoses recorded at discharge, and
-HbA1c result. These findings suggest that care-transition planning — particularly for
-high-comorbidity patients with prior hospitalizations — may be the highest-yield
-intervention target. Limitations include the dataset's age (1999–2008) and the
-exclusion of social determinants of health, which likely confound readmission risk.
+## Summary of Findings
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 See `requirements.txt`. Core packages:
 
@@ -153,17 +141,17 @@ jupyter
 
 ---
 
-## 📜 References
+## References
 
-1. Strack, B., DeShazo, J.P., et al. (2014). Impact of HbA1c Measurement on Hospital
-   Readmission Rates: Analysis of 70,000 Clinical Database Patient Records.
-   *BioMed Research International*, Article ID 781670.
-   https://doi.org/10.1155/2014/781670
+1. Darmanis, S., Sloan, S. A., et al. (2023). "Transcriptional programs of glioblastoma subclasses are preserved in the tumor microenvironment." Nature Communications, 14(1), 3848. PMID: 37400346 DOI: 10.1038/s41467-023-39434-2
 
-2. UCI Machine Learning Repository. (2014). Diabetes 130-US Hospitals Dataset.
-   https://archive.ics.uci.edu/dataset/296
+2. Mayo clinic, for information behind Glioblastoma (GBM). https://www.mayoclinic.org/diseases-conditions/glioblastoma/symptoms-causes/syc-20569077
 
-3. Grus, J. (2019). *Data Science from Scratch* (2nd ed.). O'Reilly Media.
+3. Stephanie Hicks, "Welcome to the World of Single-Cell RNA-Sequencing". https://learn.gencore.bio.nyu.edu/single-cell-rnaseq/
+
+4. Gemini was used in the modification and use of some python scripts for this project.
+
+5. Dr. Sarangan (Ravi) Ravichandran and Dr. Randall Johnson from Hood College for their contributions in the form of knowledge gained through lectures, lecture notes and workbooks.
 
 ---
 
