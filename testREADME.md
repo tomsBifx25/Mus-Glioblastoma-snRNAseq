@@ -1,66 +1,65 @@
-# Predicting Hospital Readmission Risk from Clinical Indicators
+# Comparative Single-Nucleus Transcriptomics of Glioblastoma Across the Lifespan
 ### BIFX-546: Machine Learning for Bioinformatics — Spring 2026
 
 **Team Members:**
-- John Doe (jdoe@hood.edu)
+- Thomas Walsh (tjw8@hood.edu)
 
 ---
 
-## 🎯 Project Goal
+## Project Goal
 
-Can we predict 30-day hospital readmission risk from routine clinical measurements
-(lab values, vitals, diagnoses) collected at the time of discharge?
+How does the age-dependent Tumor microenvironment diverge in glioblastoma contexts between young and aged mice?
 
-We hypothesize that a combination of discharge lab values and comorbidity count is
-predictive of readmission, and that logistic regression can identify the most influential
-clinical features.
+Aging is the primary risk factor for glioblastoma (GBM) and significantly correlates with poorer prognosis. While much research focuses on the tumor's genetic mutations, the age-dependent microenvironment remains under-explored. This dataset is unique because it provides high-resolution, single-nucleus RNA sequencing (snRNA-seq) across "young" and "aged" cohorts, allowing for a granular look at how the aging brain environment modulates cancer progression and immune evasion.
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 | Field | Details |
 |---|---|
-| **Name** | Diabetes 130-US Hospitals (1999–2008) |
-| **Source** | UCI Machine Learning Repository |
-| **URL** | https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008 |
-| **Size** | ~100,000 patient encounters, 50 features |
-| **Citation** | Strack, B. et al. (2014). Impact of HbA1c Measurement on Hospital Readmission Rates. *BioMed Research International*, 2014. |
+| **Name** | longevity-db/mouse-glioblastoma-snRNAseq (2025) |
+| **Source** | Hugging Face |
+| **URL** | https://huggingface.co/datasets/longevity-db/mouse-glioblastoma-snRNAseq |
+| **Size** | ~431,000 single nucleus RNA-seq counts, 29 features |
+| **Citation** | Darmanis, S., Sloan, S. A., et al. (2023) "Transcriptional programs of glioblastoma subclasses are preserved in the tumor microenvironment." Nature Communications, 14(1), 3848. PMID: 37400346 DOI: 10.1038/s41467-023-39434-2 |
 
-The dataset contains inpatient encounter records including demographics, diagnoses,
-lab results, medications, and a binary readmission outcome (`<30 days` vs. `NO`).
+This dataset comprises single-nucleus RNA sequencing (snRNA-seq) data from the brain (glioblastoma tumors and their microenvironment) of both young and aged mice. It provides a high-resolution cellular and molecular census of glioblastoma, a highly aggressive brain tumor, with crucial insights into its age-related characteristics.
 
----
-
-## 🧠 Techniques Used
-
-| Phase | Technique | Course Week |
-|---|---|---|
-| EDA | Descriptive statistics (mean, median, std, IQR) | Week 5 |
-| EDA | Distribution plots, correlation heatmap, bar charts | Week 3 |
-| Analysis | Chi-square test of independence (readmission vs. diagnosis group) | Week 6 |
-| Analysis | Bootstrap confidence intervals on readmission rate | Week 6 |
-| Modeling | Logistic Regression with train/test split (80/20) | Week 10 |
-| Modeling | Decision Tree for feature importance comparison | Week 11 |
-| Evaluation | Accuracy, Precision, Recall, AUC-ROC | Week 10–11 |
+The original data was sourced from a CELLxGENE Discover collection titled "Glioblastoma from young and aged mice." This processed version has been transformed from its original AnnData format into standardized .parquet files, enhancing its usability for machine learning, bioinformatics pipelines, and enabling detailed analysis of age-dependent changes in glioblastoma.
 
 ---
 
-## 📁 Repository Structure
+## Techniques Used
+
+| Phase | Technique |
+|---|---|
+| EDA | Descriptive statistics (mean, median, std, IQR) |
+| EDA | Scatter plots, Distribution plots, correlation heatmap |
+| Analysis | Chi-square test of independence (readmission vs. diagnosis group) |
+| Analysis | Bootstrap confidence intervals on readmission rate |
+| Modeling | Logistic Regression with train/test split (80/20) |
+| Modeling | Decision Tree for feature importance comparison |
+| Evaluation | Accuracy, Precision, Recall, AUC-ROC |
+
+---
+
+## Repository Structure
 
 ```
-diabetes-readmission/
-├── notebooks/
+Mus-Glioblastoma-snRNAseq/
+├── Notebooks/
 │   ├── 01_eda.ipynb              # Data loading, cleaning, EDA
-│   ├── 02_hypothesis_testing.ipynb  # Statistical tests
-│   └── 03_modeling.ipynb         # Logistic regression + decision tree
-├── data/
+├── Data/
 │   └── README_data.md            # Link to UCI source; raw file not included (>50MB)
-├── results/
-│   ├── fig1_readmission_by_age.png
-│   ├── fig2_correlation_heatmap.png
-│   ├── fig3_roc_curve.png
-│   └── table1_model_metrics.csv
+│   └── README_data.md            # Link to UCI source; raw file not included (>50MB)
+│   └── README_data.md            # Link to UCI source; raw file not included (>50MB)
+├── Results/
+│   ├── fig01_gen_Reads-Genes.png
+│   ├── fig02_gen_Reads-Genes-byType.png
+│   ├── fig03_gen_Reads-Genes-bySex.png
+│   ├── fig04_gen_Distrib-Reads.png
+│   ├── fig05_gen_Distrib-Genes.png
 ├── src/
 │   └── preprocess.py             # Reusable cleaning functions
 ├── README.md
@@ -69,7 +68,7 @@ diabetes-readmission/
 
 ---
 
-## ⚙️ How to Run
+## How to Run
 
 ### Option 1 — Google Colab (recommended, no install needed)
 
