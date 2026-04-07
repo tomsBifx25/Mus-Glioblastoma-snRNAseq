@@ -123,6 +123,7 @@ pandas>=1.5
 numpy>=1.23
 matplotlib>=3.6
 seaborn>=0.12
+scanpy>=1.12
 scikit-learn>=1.2
 scipy>=1.10
 jupyter
