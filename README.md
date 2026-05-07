@@ -99,6 +99,7 @@ Mus-Glioblastoma-snRNAseq/
 ├── src/
 │   └── preprocess.py                      # Possible preprocess cleaning needed
 ├── README.md                              # Project Overview
+├── references.bib                         # BibTex file with References
 └── requirements.txt                       # List of possible dependencies
 ```
 
