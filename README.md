@@ -1,6 +1,8 @@
-# Age-Dependent Remodeling of the Glioblastoma Microenvironment Revealed by Single-Nucleus Transcriptomics
+# Age-Dependent Transcriptional and Cellular Features of the Glioblastoma Microenvironment Revealed by Single-Nucleus RNA Sequencing
 
-*Thomas Walsh (tjw8@hood.edu) | March 18, 2026*
+*Thomas Walsh | March 18, 2026*
+   *(tomjw31@gmail.com)*
+   *(tjw8@hood.edu)*
 
 ---
 
@@ -12,9 +14,10 @@
 
 ## Project Goal
 ### Research Question:
-How does the age-dependent Tumor microenvironment diverge in glioblastoma contexts between young and aged mice?
+How do gene expression patterns and cellular compositions differ between young and aged glioblastoma microenvironments, and which transcriptional features best distinguish these age-dependent states?
+
 ### Relevance:
-Aging is the primary risk factor for glioblastoma (GBM) and significantly correlates with poorer prognosis. While much research focuses on the tumor's genetic mutations, the age-dependent microenvironment remains under-explored. This dataset is unique because it provides high-resolution, single-nucleus RNA sequencing (snRNA-seq) across "young" and "aged" cohorts, allowing for a granular look at how the aging brain environment modulates cancer progression and immune evasion.
+Aging is the strongest risk factor for glioblastoma and is associated with worse outcomes, yet the biological basis for this disparity remains incompletely understood. While prior work has focused heavily on tumor-intrinsic mutations, age-related differences in the tumor microenvironment may play a critical role in disease progression. Using single-nucleus RNA sequencing *(snRNA-seq)* data from young and aged mouse glioblastoma models, this study investigates both transcriptional changes and shifts in cellular structure. By integrating differential expression, clustering, and machine learning, the aim is to identify key genes and cellular patterns that distinguish age-dependent tumor states and provide insight into mechanisms that may underlie age-associated disease severity.
 
 ---
 
@@ -40,13 +43,14 @@ The original data was sourced from NCBI Gene Expression Omnibus (GEO) (2024) und
 
 | Phase | Technique |
 |---|---|
-| EDA | Descriptive statistics (mean, median, std, IQR) |
-| EDA | Scatter plots, Distribution plots, correlation heatmap |
-| Analysis | Chi-square test of independence (readmission vs. diagnosis group) |
-| Analysis | Bootstrap confidence intervals on readmission rate |
-| Modeling | Logistic Regression with train/test split (80/20) |
-| Modeling | Decision Tree for feature importance comparison |
-| Evaluation | Accuracy, Precision, Recall, AUC-ROC |
+| EDA | Descriptive statistics, Data Cleaning |
+| EDA | QC and Normalization, Distribution plots |
+| Analysis | Highly Variable Genes, Dimensionality Reduction: PCA |
+| Analysis | Dimensionality Reduction: Compute Neighbourhood Graphs, UMAP |
+| Analysis | Leiden clustering, Differential Expression Analysis (DEA) |
+| Modeling | train/test split (80/20), Random Forest Classifier |
+| Modeling | Evaluation, Feature Importance |
+| Analysis | Gene Set Enrichment Analysis (GSEA) |
 
 ---
 
@@ -170,9 +174,7 @@ jupyter
 
 3. Stephanie Hicks, "Welcome to the World of Single-Cell RNA-Sequencing". https://learn.gencore.bio.nyu.edu/single-cell-rnaseq/
 
-4. Gemini was used in the modification and use of some python scripts for this project.
-
-5. Dr. Sarangan (Ravi) Ravichandran and Dr. Randall Johnson from Hood College for their contributions in the form of knowledge gained through lectures, lecture notes and workbooks.
+4. Dr. Sarangan (Ravi) Ravichandran and Dr. Randall Johnson from Hood College for their contributions in the form of knowledge gained through lectures, lecture notes and workbooks.
 
 ---
 
